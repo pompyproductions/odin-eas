@@ -13,6 +13,61 @@ body {
     font-size: 100%;
 } h1, h2, h3, p {
     margin: 0;
+} a {
+    text-decoration: none;
+    color: inherit;
+} a:hover {
+    text-decoration: underline;
+} ul, ol {
+    list-style: none;
 }
 
 /* boilerplate end */
+/* template start */
+
+:root {
+    --coral: #f49b85;
+    --white: #F2F5FF;
+    --blue: #477998;
+}
+
+header {
+    background-color: var(--coral);
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 1vw 20px;
+}
+
+body {
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family:Arial, Helvetica, sans-serif
+}
+
+footer {
+    background-color: var(--blue);
+    flex: 0 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+a {
+    display: flex;
+    align-items: center;
+}
+
+.main-container {
+    flex: 1 0 0;
+}
