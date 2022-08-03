@@ -29,6 +29,7 @@ body {
     --coral: #f49b85;
     --white: #F2F5FF;
     --blue: #477998;
+    --yellow: #F5E960;
 }
 
 header {
@@ -70,4 +71,21 @@ a {
 
 .main-container {
     flex: 1 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 5vh);
+    grid-template-rows: repeat(6, 5vh);
+}
+
+.grid-cell {
+    background-color: white;
+    flex: 0 0 auto;
+}
+.grid-cell:hover {
+    background-color: var(--yellow);
 }
