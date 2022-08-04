@@ -1,6 +1,11 @@
 # odin-eas
 Etch-and-sketch assignment from The Odin Project curriculum.
 
+## NOTES
+For some reason, gridContainer.childNodes.forEach((item) => ...) does not work as intended.  
+When I console.log() it, a "text" object appears. Could that be the reason?  
+Using querySelectorAll(".grid-cell") as a workaround.
+
 ## TO-DO
 Add RESET functionality, which would remove .colored from all grid cells and unfreeze.
 
