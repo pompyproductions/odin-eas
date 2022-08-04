@@ -106,9 +106,13 @@ a {
 .grid-cell {
     background-color: white;
     flex: 0 0 auto;
+    border: var(--white) 1px solid;
 }
-.grid-cell:hover {
+.colored {
     background-color: var(--yellow);
+}
+.frozen {
+    background-color: var(--black);
 }
 
 .popup-container {
