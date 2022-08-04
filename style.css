@@ -55,6 +55,7 @@ footer {
     text-align: center;
     padding: 20px;
     color: white;
+    font-size: 1.2rem;
 }
 
 nav {
@@ -63,10 +64,11 @@ nav {
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 800;
 }
 a {
+    font-size: 1.2rem;
     display: flex;
     align-items: center;
 }
@@ -74,8 +76,25 @@ a {
 .main-container {
     flex: 1 0 0;
     display: flex;
+    flex-direction: column;
+    gap: 20px;
     align-items: center;
     justify-content: center;
+}
+
+.button-container {
+    display: flex;
+    gap: 20px;
+}
+.button-container>button {
+    background: none;
+    font-size: 1.2rem;
+    border: none;
+    color: var(--blue);
+    
+}
+.button-container>button:hover {
+    color: var(--black);
 }
 
 .grid-container {
@@ -100,6 +119,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+    visibility: hidden;
 }
 .popup-window {
     background-color: white;
