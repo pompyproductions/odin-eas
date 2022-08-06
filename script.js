@@ -9,16 +9,17 @@ const onMouseOver = (event) => {
 }
 const toggleFreeze = () => {
     isDrawing = !isDrawing;
-    console.log(document.querySelectorAll(".colored"));
     document.querySelectorAll(".colored").forEach((item) => {
         item.classList.toggle("frozen");
-    })
+    });
+    gridContainer.classList.toggle("frozen");
 }
 const resetCanvas = () => {
     document.querySelectorAll(".grid-cell").forEach((item) => {
         if (item.classList.contains("colored")) {item.classList.remove("colored")};
         if (item.classList.contains("frozen")) {item.classList.remove("frozen")};
     });
+    if (gridContainer.classList.contains("frozen")) {gridContainer.classList.remove("frozen")};
     isDrawing = true;
 }
 const createGrid = (size) => {
@@ -40,7 +41,7 @@ const createGrid = (size) => {
     grid-template-rows:repeat(${size[0]}, ${gridSize}vh)`);
     
     // create and append cells
-    for (let i=0; i<=size[0]*size[1]; i++) {
+    for (let i=0; i<size[0]*size[1]; i++) {
         let elem = document.createElement("div");
         elem.setAttribute("class", "grid-cell");
         gridContainer.appendChild(elem);
@@ -59,6 +60,8 @@ const createCanvas = () => {
     ];
     console.log(newCanvasSize);
     createGrid(newCanvasSize);
+    resetCanvas();
+    toggleFreeze();
     hidePopup();
 }
 

@@ -113,6 +113,10 @@ a {
     background-color: var(--black);
     border: none;
 }
+.grid-container.frozen {
+    background-color: none;
+    border: 2px var(--black) solid;
+}
 
 .popup-container {
     position: fixed;
