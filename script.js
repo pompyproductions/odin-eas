@@ -24,13 +24,41 @@ const resetCanvas = () => {
     });
     isDrawing = true;
 }
+const createCanvas = (row, col) => {
+    // get rid of existing table
+    console.log(document.querySelectorAll(".grid-cell"));
+    document.querySelectorAll(".grid-cell").forEach(item => item.remove());
+    
+    // set up the cell size
+    let gridSize;
+    if (row > col) {
+        gridSize = (50/row);
+    } else {
+        gridSize = (50/col);
+    };
+    
+    // set up the table size
+    gridContainer.setAttribute("style", 
+    `grid-template-columns:repeat(${col}, ${gridSize}vh); \
+    grid-template-rows:repeat(${row}, ${gridSize}vh)`);
+
+    // create and append cells
+    for (let i=0; i<=row*col; i++) {
+        let elem = document.createElement("div");
+        elem.setAttribute("class", "grid-cell");
+        gridContainer.appendChild(elem);
+    }
+}
 
 gridContainer.addEventListener("mouseover", onMouseOver);
 freezeButton.addEventListener("click", toggleFreeze);
 resetButton.addEventListener("click", resetCanvas);
 
-for (let i=0; i<=36; i++) {
-    let elem = document.createElement("div");
-    elem.setAttribute("class", "grid-cell");
-    gridContainer.appendChild(elem);
-}
+createCanvas(50, 50);
+
+// gridContainer.setAttribute("style", "grid-template-columns:repeat(6, 5vh);grid-template-rows:repeat(6, 5vh)");
+// for (let i=0; i<=36; i++) {
+//     let elem = document.createElement("div");
+//     elem.setAttribute("class", "grid-cell");
+//     gridContainer.appendChild(elem);
+// }

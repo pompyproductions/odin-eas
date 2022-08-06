@@ -99,8 +99,6 @@ a {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(6, 5vh);
-    grid-template-rows: repeat(6, 5vh);
 }
 
 .grid-cell {
