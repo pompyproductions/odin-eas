@@ -55,10 +55,3 @@ freezeButton.addEventListener("click", toggleFreeze);
 resetButton.addEventListener("click", resetCanvas);
 
 createCanvas(20, 20);
-
-// gridContainer.setAttribute("style", "grid-template-columns:repeat(6, 5vh);grid-template-rows:repeat(6, 5vh)");
-// for (let i=0; i<=36; i++) {
-//     let elem = document.createElement("div");
-//     elem.setAttribute("class", "grid-cell");
-//     gridContainer.appendChild(elem);
-// }
