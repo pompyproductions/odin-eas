@@ -111,6 +111,7 @@ a {
 }
 .frozen {
     background-color: var(--black);
+    border: none;
 }
 
 .popup-container {
