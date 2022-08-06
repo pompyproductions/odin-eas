@@ -148,6 +148,10 @@ a {
     padding: 4px 8px;
     color: var(--coral);
 }
+.popup-bar>button:hover {
+    color: var(--blue);
+    border-color: var(--blue);
+}
 .separator {
     height: 1px;
     background-color: var(--coral);
@@ -176,6 +180,7 @@ input {
     width: 5vw;
     gap: 10px;
     flex: 0 1 10px;
+    color: var(--blue);
 }
 input:hover {
     border-color: var(--black);
@@ -193,4 +198,8 @@ input:hover {
 .submit-popup:hover {
     color: var(--blue);
     border-color: var(--blue);
+}
+
+.hidden {
+    visibility: hidden;
 }
