@@ -143,11 +143,10 @@ a {
     justify-content: space-between;
 }
 .popup-bar>button {
-    background-color: var(--coral);
-    border: none;
-    border-radius: 20%;
-    color: white;
-    font-weight: 900;
+    background-color: white;
+    border: 1px var(--coral) solid;
+    padding: 4px 8px;
+    color: var(--coral);
 }
 .separator {
     height: 1px;
@@ -168,10 +167,30 @@ a {
     display: flex;
     justify-content: space-between;
 }
+.number-input:hover {
+    color: var(--black);
+}
 
 input {
     border: var(--blue) 1px solid;
     width: 5vw;
     gap: 10px;
     flex: 0 1 10px;
+}
+input:hover {
+    border-color: var(--black);
+}
+
+.submit-popup {
+    margin-top: 12px;
+    background-color: white;
+    border: 1px var(--coral) solid;
+    padding: 8px 16px;
+    color: var(--coral);
+    font-size: 1rem;
+    text-align: start;
+}
+.submit-popup:hover {
+    color: var(--blue);
+    border-color: var(--blue);
 }
