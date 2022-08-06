@@ -1,5 +1,7 @@
 console.log("script.js: flotation device");
 
+let newCanvasSize = [8, 8]
+
 const onMouseOver = (event) => {
     if (isDrawing && event.target.classList.contains("grid-cell")) {
         event.target.classList.add("colored")
@@ -19,26 +21,26 @@ const resetCanvas = () => {
     });
     isDrawing = true;
 }
-const createCanvas = (row, col) => {
+const createGrid = (size) => {
     // get rid of existing table
     console.log(document.querySelectorAll(".grid-cell"));
     document.querySelectorAll(".grid-cell").forEach(item => item.remove());
     
     // set up the cell size
     let gridSize;
-    if (row > col) {
-        gridSize = (50/row);
+    if (size[0] > size[1]) {
+        gridSize = (50/size[0]);
     } else {
-        gridSize = (50/col);
+        gridSize = (50/size[1]);
     };
     
     // set up the table size
     gridContainer.setAttribute("style", 
-    `grid-template-columns:repeat(${col}, ${gridSize}vh); \
-    grid-template-rows:repeat(${row}, ${gridSize}vh)`);
+    `grid-template-columns:repeat(${size[1]}, ${gridSize}vh); \
+    grid-template-rows:repeat(${size[0]}, ${gridSize}vh)`);
     
     // create and append cells
-    for (let i=0; i<=row*col; i++) {
+    for (let i=0; i<=size[0]*size[1]; i++) {
         let elem = document.createElement("div");
         elem.setAttribute("class", "grid-cell");
         gridContainer.appendChild(elem);
@@ -48,6 +50,16 @@ const createCanvas = (row, col) => {
 const hidePopup = () => {
     console.log("pressed");
     popupContainer.classList.toggle("hidden");
+}
+
+const createCanvas = () => {
+    newCanvasSize = [
+        document.getElementById("input-rows").value,
+        document.getElementById("input-columns").value
+    ];
+    console.log(newCanvasSize);
+    createGrid(newCanvasSize);
+    hidePopup();
 }
 
 
@@ -68,8 +80,11 @@ newButton.addEventListener("click", hidePopup);
 const popupHideButton = document.getElementById("popup-hide-button");
 popupHideButton.addEventListener("click", hidePopup);
 
+const popupNewCanvasButton = document.getElementById("submit-new-canvas");
+console.log(popupNewCanvasButton);
+popupNewCanvasButton.addEventListener("click", createCanvas);
 
 let isDrawing = true;
 
 
-createCanvas(20, 20);
+createGrid(newCanvasSize);
